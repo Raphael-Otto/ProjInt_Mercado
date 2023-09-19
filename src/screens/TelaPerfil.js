@@ -12,7 +12,9 @@ export default function TelaPerfilApp({ navigation }) {
   return (
     <ScrollView style={styles.container}>
       <ScrollView>
-        <TouchableOpacity style={styles.option} onPress={() => {}}>
+        <TouchableOpacity 
+          style={styles.option} 
+          onPress={() => navigation.navigate('TelaNotificacoesApp')}>
           <MaterialCommunityIcons name="bell-outline" size={35} color="#333" />
           <ScrollView style={styles.info}>
             <Text style={styles.title}>Notificações</Text>
@@ -22,6 +24,7 @@ export default function TelaPerfilApp({ navigation }) {
           </ScrollView>
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
+
         <TouchableOpacity
           style={styles.option}
           onPress={() => navigation.navigate('TelaPagamentosApp')}
@@ -34,7 +37,10 @@ export default function TelaPerfilApp({ navigation }) {
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.option} onPress={() => {}}>
+        <TouchableOpacity
+          style={styles.option}
+          onPress={() => navigation.navigate('TelaCuponsApp')}
+        >
           <MaterialCommunityIcons
             name="ticket-outline"
             size={35}
@@ -47,25 +53,10 @@ export default function TelaPerfilApp({ navigation }) {
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.option} onPress={() => {}}>
-          <MaterialCommunityIcons name="heart-outline" size={35} color="#333" />
-          <ScrollView style={styles.info}>
-            <Text style={styles.title}>Favoritos</Text>
-            <Text style={styles.description}>Meus locais favoritos</Text>
-          </ScrollView>
-          <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.option} onPress={() => {}}>
-          <MaterialCommunityIcons name="credit-card" size={35} color="#333" />
-          <ScrollView style={styles.info}>
-            <Text style={styles.title}>Fidelidade</Text>
-            <Text style={styles.description}>Minhas fidelidades</Text>
-          </ScrollView>
-          <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.option} onPress={() => {}}>
+        <TouchableOpacity 
+          style={styles.option} 
+          onPress={() => navigation.navigate('TelaEnderecosApp')}
+        >
           <MaterialCommunityIcons name="map-marker" size={35} color="#333" />
           <ScrollView style={styles.info}>
             <Text style={styles.title}>Endereços</Text>
@@ -76,42 +67,35 @@ export default function TelaPerfilApp({ navigation }) {
       </ScrollView>
 
       <View style={styles.menuAdicional}>
-        <TouchableOpacity style={styles.opcoesAdicionais}>
+        <TouchableOpacity 
+          style={styles.opcoesAdicionais}
+          onPress={() => navigation.navigate('TelaAjudaApp')}
+        >
           <View style={styles.wrapper}>
-            <MaterialCommunityIcons name="lifebuoy" size={25} color="#CDC" />
+            <MaterialCommunityIcons name="lifebuoy" size={25} color="#333" />
             <Text style={styles.optionName}>Ajuda</Text>
           </View>
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.opcoesAdicionais}>
+        <TouchableOpacity 
+          style={styles.opcoesAdicionais}
+          onPress={() => navigation.navigate('TelaConfiguracoesApp')}
+        >
           <View style={styles.wrapper}>
-            <MaterialIcons name="settings" size={25} color="#CDC" />
+            <MaterialIcons name="settings" size={25} color="#333" />
             <Text style={styles.optionName}>Configurações</Text>
           </View>
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.opcoesAdicionais}>
+        <TouchableOpacity 
+          style={styles.opcoesAdicionais}
+          onPress={() => navigation.navigate('TelaConfiguracoesApp')}
+        >
           <View style={styles.wrapper}>
-            <MaterialIcons name="security" size={25} color="#CDC" />
+            <MaterialIcons name="security" size={25} color="#333" />
             <Text style={styles.optionName}>Segurança</Text>
-          </View>
-          <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.opcoesAdicionais}>
-          <View style={styles.wrapper}>
-            <MaterialIcons name="store-mall-directory" size={25} color="#CDC" />
-            <Text style={styles.optionName}>Sugerir Restaurantes</Text>
-          </View>
-          <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.opcoesAdicionais}>
-          <View style={styles.wrapper}>
-            <MaterialCommunityIcons name="rocket" size={25} color="#CDC" />
-            <Text style={styles.optionName}>Seja parceiro!</Text>
           </View>
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
@@ -171,7 +155,7 @@ const styles = StyleSheet.create({
   },
   optionName: {
     marginLeft: 25,
-    color: '#ccc',
+    color: '#333',
     fontSize: 15,
   },
 });

@@ -1,12 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-import Input from '../components/Input';
-
-export default function TelaBuscaApp() {
+export default function Configuracoes() {
   return (
-    <View style={styles.container}>      
-      <Input placeholder="Busque por seus itens..." />
+    <View style={styles.container}>
+      <Text>Configurações</Text>
     </View>
   );
 }
@@ -15,5 +13,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

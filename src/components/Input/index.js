@@ -5,7 +5,7 @@ import { TextInput, View, StyleSheet } from 'react-native';
 export default function Input(props) {
   return (
     <View style={styles.container}>
-      <MaterialIcons name="search" size={25} color={'green'} />
+      <MaterialIcons name="search" size={25} color={'white'} style={styles.lupinha} />
 
       <TextInput style={styles.textInput} placeholder={props.placeholder} />
     </View>
@@ -14,16 +14,24 @@ export default function Input(props) {
 
 const styles = StyleSheet.create({
   container: {
-    background: '#EEE',
+    backgroundColor: '#FFF',
     height: 'auto',
     flexDirection: 'row',
     alignItems: 'center',
     margin: 20,
-    paddingLeft: 10,
-    borderRadius: 4,
+    paddingLeft: 7.5,
+    borderColor: '#E5E4E2',
+    borderWidth: 1,
+    borderRadius: 35,
   },
   textInput: {
     paddingVertical: 15,
-    paddingHorizontal: 20,
+    paddingLeft: 10,
+    width: '80%'
   },
+  lupinha: {
+    backgroundColor: 'green',
+    padding: 10,
+    borderRadius: 30,
+  }
 });

@@ -1,12 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import CupomDesconto from '../components/Home/CupomDesconto';
 
-import Input from '../components/Input';
-
-export default function TelaBuscaApp() {
+export default function Cupons() {
   return (
-    <View style={styles.container}>      
-      <Input placeholder="Busque por seus itens..." />
+    <View style={styles.container}>
+      <CupomDesconto style={styles.cupons} />
     </View>
   );
 }
