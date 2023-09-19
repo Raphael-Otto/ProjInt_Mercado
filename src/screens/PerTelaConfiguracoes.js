@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export default function Configuracoes() {
   return (
     <View style={styles.container}>
-      <Text>Configurações</Text>
+      <Text>Configuraçõeawdaws</Text>
     </View>
   );
 }
