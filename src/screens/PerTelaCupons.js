@@ -6,25 +6,16 @@ export default function Cupons() {
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.title}> Cupons Ativos </Text>
-      <CupomDesconto style={styles.cupons} />
+      <CupomDesconto style={{marginHorizontal: 20}} />
 
       <Text style={styles.title2}> Seus Cupons</Text>
-      <CupomDesconto style={styles.cupons} />
-      <CupomDesconto style={styles.cupons} />
-      <CupomDesconto style={styles.cupons} />
-      <CupomDesconto style={styles.cupons} />
-      <CupomDesconto style={styles.cupons} />
-      <CupomDesconto style={styles.cupons} />
-      <CupomDesconto style={styles.cupons} />
-      <CupomDesconto style={styles.cupons} />
-      <CupomDesconto style={styles.cupons} />
+      <Text style={styles.aviso}>Você ja utilizou todos os seus cupons</Text>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
   },
   title: {
@@ -40,4 +31,13 @@ const styles = StyleSheet.create({
     marginTop: 30,
     margin: 10,
   },
+  aviso: {
+    marginTop: 25,
+    fontSize: 16,
+    color: '#333',
+    marginLeft: '14%',
+  },
+  cupons: {
+    marginHorizontal: 20,
+  }
 });

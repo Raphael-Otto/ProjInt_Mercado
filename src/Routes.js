@@ -17,6 +17,7 @@ import TelaEnderecosApp from './screens/PerTelaEnderecos'
 import TelaAjudaApp from './screens/PerTelaAjuda';
 import TelaConfiguracoesApp from './screens/PerTelaConfiguracoes';
 import TelaSegurancaApp from './screens/PerTelaSeguranca';
+import TelaInfoCupom from './screens/PerTelaInfoCupom';
 
 const BottomTab = createBottomTabNavigator();
 const PerfilStack = createNativeStackNavigator();
@@ -34,6 +35,20 @@ function PedidosRouter() {
     </Tab.Navigator>
   );
 }
+
+function InfoCupom() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Cupom" component={TelaInfoCupom} />
+      <Tab.Screen
+        name="InfoCupom"
+        component={TelaInfoCupom}
+        options={{ tabBarLabel: 'InfoCupom' }}
+      />
+    </Tab.Navigator>
+  );
+}
+
 
 function TelaPerfilRoutesApp() {
   return (

@@ -4,7 +4,9 @@ import { Image, Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 
 export default function CupomDesconto() {
   return (
-    <TouchableOpacity style={styles.cupom}>
+    <TouchableOpacity 
+    onPress={() => navigation.navigate('PerTelaInfoCupom')}
+    style={styles.cupom}>
       <View style={styles.divisor}>
         <View style={styles.conteudo}>
           <Image
@@ -35,7 +37,6 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     paddingHorizontal: 15,
     marginHorizontal: 20,
-    marginTop: 10,
   },
   divisor: {
     flexDirection: 'row',
