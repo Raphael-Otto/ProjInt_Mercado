@@ -17,7 +17,6 @@ import TelaEnderecosApp from './screens/PerTelaEnderecos'
 import TelaAjudaApp from './screens/PerTelaAjuda';
 import TelaConfiguracoesApp from './screens/PerTelaConfiguracoes';
 import TelaSegurancaApp from './screens/PerTelaSeguranca';
-import TelaInfoCupom from './screens/PerTelaInfoCupom';
 
 const BottomTab = createBottomTabNavigator();
 const PerfilStack = createNativeStackNavigator();
@@ -35,20 +34,6 @@ function PedidosRouter() {
     </Tab.Navigator>
   );
 }
-
-function InfoCupom() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Cupom" component={TelaInfoCupom} />
-      <Tab.Screen
-        name="InfoCupom"
-        component={TelaInfoCupom}
-        options={{ tabBarLabel: 'InfoCupom' }}
-      />
-    </Tab.Navigator>
-  );
-}
-
 
 function TelaPerfilRoutesApp() {
   return (
@@ -116,24 +101,15 @@ export default function Routes() {
               <MaterialIcons name="home" color={color} size={26} />
             ),
             headerStyle: {
-              shadowColor: "#000",
-              shadowColor: "#000",
-              shadowOffset: {
-                width: 0,
-                height: 2,
-              },
-              shadowOpacity: 0.25,
-              shadowRadius: 3.84,
-
-              elevation: 5,
               backgroundColor: '#FFF',
+              
             },
+            headerTintColor: '#000',
             headerTitleStyle: {
-              fontWeight: 'normal',
-            }
+              fontWeight: 'bold',
+            },
           }}
         />
-
         <BottomTab.Screen
           name="Busca"
           component={TelaBuscaApp}
@@ -142,26 +118,9 @@ export default function Routes() {
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="search" color={color} size={26} />
             ),
-            headerStyle: {
-              shadowColor: "#000",
-              shadowColor: "#000",
-              shadowOffset: {
-                width: 0,
-                height: 2,
-              },
-              shadowOpacity: 0.25,
-              shadowRadius: 3.84,
-
-              elevation: 5,
-              backgroundColor: '#FFF',
-            },
-            headerTitleStyle: {
-              fontWeight: 'normal',
-            }
           }}
         />
-
-        <BottomTab.Screen
+         <BottomTab.Screen
           name="Pedidos"
           component={PedidosRouter}
           options={{
@@ -169,25 +128,8 @@ export default function Routes() {
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="assignment" color={color} size={26} />
             ),
-            headerStyle: {
-              shadowColor: "#000",
-              shadowColor: "#000",
-              shadowOffset: {
-                width: 0,
-                height: 2,
-              },
-              shadowOpacity: 0.25,
-              shadowRadius: 3.84,
-
-              elevation: 5,
-              backgroundColor: '#FFF',
-            },
-            headerTitleStyle: {
-              fontWeight: 'normal',
-            }
           }}
         />
-
         <BottomTab.Screen
           name="PerfilRoutes"
           component={TelaPerfilRoutesApp}
@@ -197,22 +139,6 @@ export default function Routes() {
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="person" color={color} size={26} />
             ),
-            headerStyle: {
-              shadowColor: "#000",
-              shadowColor: "#000",
-              shadowOffset: {
-                width: 0,
-                height: 2,
-              },
-              shadowOpacity: 0.25,
-              shadowRadius: 3.84,
-
-              elevation: 5,
-              backgroundColor: '#FFF',
-            },
-            headerTitleStyle: {
-              fontWeight: 'normal',
-            }
           }}
         />
       </BottomTab.Navigator>

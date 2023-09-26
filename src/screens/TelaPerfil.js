@@ -91,7 +91,7 @@ export default function TelaPerfilApp({ navigation }) {
 
         <TouchableOpacity 
           style={styles.opcoesAdicionais}
-          onPress={() => navigation.navigate('TelaSegurancaApp')}
+          onPress={() => navigation.navigate('TelaConfiguracoesApp')}
         >
           <View style={styles.wrapper}>
             <MaterialIcons name="security" size={25} color="#333" />

@@ -4,9 +4,7 @@ import { Image, Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 
 export default function CupomDesconto() {
   return (
-    <TouchableOpacity 
-    onPress={() => navigation.navigate('PerTelaInfoCupom')}
-    style={styles.cupom}>
+    <TouchableOpacity style={styles.cupom}>
       <View style={styles.divisor}>
         <View style={styles.conteudo}>
           <Image
