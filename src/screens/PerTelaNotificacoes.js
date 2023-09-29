@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export default function Notificacoes() {
   return (
     <View style={styles.container}>
-      <Text>Notificações</Text>
+      <Text style={styles.titulo}>Nenhuma notificação no momento</Text>
     </View>
   );
 }
@@ -14,6 +14,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+  },
+  titulo: {
+    fontSize: 20,
+    marginHorizontal: 20,
+    marginVertical: 25,
+    fontWeight: 'normal',
+    color: '#999',
   },
 });
