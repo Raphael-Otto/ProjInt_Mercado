@@ -10,13 +10,13 @@ import TelaPerfilApp from './screens/TelaPerfil';
 import TelaPedidosApp from './screens/TelaPedidos';
 import TelaPedidosAntApp from './screens/TelaPedidos';
 
-import TelaPagamentosApp from './screens/PerTelaPagamentos';
-import TelaNotificacoesApp from './screens/PerTelaNotificacoes';
-import TelaCuponsApp from './screens/PerTelaCupons';
-import TelaEnderecosApp from './screens/PerTelaEnderecos'
-import TelaAjudaApp from './screens/PerTelaAjuda';
-import TelaConfiguracoesApp from './screens/PerTelaConfiguracoes';
-import TelaSegurancaApp from './screens/PerTelaSeguranca';
+import TelaPagamentosApp from './screens/PerfilTelas/PerTelaPagamentos';
+import TelaNotificacoesApp from './screens/PerfilTelas/PerTelaNotificacoes';
+import TelaCuponsApp from './screens/PerfilTelas/PerTelaCupons';
+import TelaEnderecosApp from './screens/PerfilTelas/PerTelaEnderecos'
+import TelaAjudaApp from './screens/PerfilTelas/PerTelaAjuda';
+import TelaConfiguracoesApp from './screens/PerfilTelas/PerTelaConfiguracoes';
+import TelaSegurancaApp from './screens/PerfilTelas/PerTelaSeguranca';
 
 const BottomTab = createBottomTabNavigator();
 const PerfilStack = createNativeStackNavigator();
