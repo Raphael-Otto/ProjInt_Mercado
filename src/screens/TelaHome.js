@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import Sugestoes from '../components/Home/Sugestoes';
 import Categorias from '../components/Home/Categorias';
 import frutaService from '../seeders/services/frutas';
@@ -21,11 +21,11 @@ export default function Home() {
   return (
     <ScrollView showsHorizontalScrollIndicator={true} style={styles.container}>
       <Sugestoes />
-      <ScrollView style={{ width: 359 }}>
+        <ScrollView style={styles.img_sugestoes}>
           {Frutas.map((Fruta) => (
             <Card
-             key={Fruta.id} fruta={Fruta} />
-            ))}
+            key={Fruta.id} fruta={Fruta} />
+            ))} 
         </ScrollView>
       <Categorias />
     </ScrollView>
@@ -36,6 +36,10 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     flex: 1,
-    flexDirection: 'row',
   },
+  img_sugestoes: {
+    width: 359,
+    flex: 1,
+    flexDirection: "row",
+  }
 });
