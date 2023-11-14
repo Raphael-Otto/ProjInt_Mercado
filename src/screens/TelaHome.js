@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <ScrollView showsHorizontalScrollIndicator={true} style={styles.container}>
       <Sugestoes />
-        <ScrollView style={styles.img_sugestoes}>
+        <ScrollView horizontal={true} style={styles.img_sugestoes}>
           {Frutas.map((Fruta) => (
             <Card
             key={Fruta.id} fruta={Fruta} />
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   img_sugestoes: {
-    width: 359,
+    width: '100%',
     flex: 1,
     flexDirection: "row",
   }
