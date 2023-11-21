@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, StyleSheet, Text } from "react-native";
 
-function Card(props) {
+function CardFrutas(props) {
   return (
     <View style={styles.card}>
       <View style={{ height: "100%", width: "100%" }}>
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Card;
+export default CardFrutas;

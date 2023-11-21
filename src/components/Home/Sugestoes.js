@@ -62,7 +62,7 @@ export default function Ofertas({ navigation }) {
                 <MaterialIcons name="local-offer" size={15} color="#000" />
               </View>
             </View>
-          </TouchableOpacity>;
+          </TouchableOpacity>
         })}
       </ScrollView>
     </View>

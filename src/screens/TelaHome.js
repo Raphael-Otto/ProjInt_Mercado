@@ -3,19 +3,35 @@ import React, { useState, useEffect } from "react";
 import { ScrollView, StyleSheet, View } from 'react-native';
 import Sugestoes from '../components/Home/Sugestoes';
 import Categorias from '../components/Home/Categorias';
+
 import frutaService from '../seeders/services/frutas';
-import Card from "../components/Cards/CardFrutas";
+import bebidaService from "../seeders/services/bebidas";
+
+import CardFrutas from "../components/Cards/CardFrutas";
+import CardBebidas from "../components/Cards/CardBebidas";
 
 export default function Home() {
   const [Frutas, setFrutas] = useState([]);
 
-  async function BuscarDados() {
+  async function BuscarFrutas() {
     const data = await frutaService.getAllFrutas();
     setFrutas(data);
   }
 
   useEffect(() => {
-    BuscarDados();
+    BuscarFrutas();
+  }, []);
+
+  /* */
+  const [Bebidas, setBebidas] = useState([]);
+
+  async function BuscarBebidas() {
+    const data = await bebidaService.getAllBebidas();
+    setBebidas(data);
+  }
+
+  useEffect(() => {
+    BuscarBebidas();
   }, []);
 
   return (
@@ -23,8 +39,15 @@ export default function Home() {
       <Sugestoes />
         <ScrollView horizontal={true} style={styles.img_sugestoes}>
           {Frutas.map((Fruta) => (
-            <Card
+            <CardFrutas
             key={Fruta.id} fruta={Fruta} />
+            ))} 
+        </ScrollView>
+        
+        <ScrollView horizontal={true} style={styles.img_sugestoes}>
+          {Bebidas.map((Bebida) => (
+            <CardBebidas
+            key={Bebida.id} bebida={Bebida} />
             ))} 
         </ScrollView>
       <Categorias />
