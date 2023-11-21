@@ -13,6 +13,7 @@ import api from '../../services/api';
 import formatNumber from '../../helpers/formatNumber';
 
 export default function Ofertas({ navigation }) {
+
   const [ofertas, setOfertas] = useState([]);
   useEffect(() => {
     async function carregarOfertas() {
@@ -41,7 +42,9 @@ export default function Ofertas({ navigation }) {
           <Text style={styles.subTitulo}>Baseada nas suas últimas pesquisas.</Text>
         </View>
         <TouchableOpacity>
-          <Text style={styles.vejaMais}>Ver mais</Text>
+          <Text 
+          onPress={() => navigation.navigate(' TelaVerMais ')}
+          style={styles.vejaMais}>Ver mais</Text>
         </TouchableOpacity>
       </View>
       <ScrollView

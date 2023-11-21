@@ -12,7 +12,7 @@ import CardFrutas from "../components/Cards/CardFrutas";
 import CardBebidas from "../components/Cards/CardBebidas";
 import CardCarnes from "../components/Cards/CardCarnes";
 
-export default function Home() {
+export default function Home({ navigation }) {
   const [Frutas, setFrutas] = useState([]);
 
   async function BuscarFrutas() {

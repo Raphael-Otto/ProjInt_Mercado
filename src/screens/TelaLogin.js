@@ -1,13 +1,8 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Text, TextInput, View, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
-import Constants from 'expo-constants';
 
 export default function TelaLogin({ navigation }) {
-
-  const Stack = createNativeStackNavigator();
-
+  
   return (
     <ImageBackground
       source={require('../imgs/FundoSimples.png')}
