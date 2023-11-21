@@ -6,9 +6,11 @@ import Categorias from '../components/Home/Categorias';
 
 import frutaService from '../seeders/services/frutas';
 import bebidaService from "../seeders/services/bebidas";
+import carneService from "../seeders/services/carnes";
 
 import CardFrutas from "../components/Cards/CardFrutas";
 import CardBebidas from "../components/Cards/CardBebidas";
+import CardCarnes from "../components/Cards/CardCarnes";
 
 export default function Home() {
   const [Frutas, setFrutas] = useState([]);
@@ -34,6 +36,18 @@ export default function Home() {
     BuscarBebidas();
   }, []);
 
+  /* */
+  const [Carnes, setCarnes] = useState([]);
+
+  async function BuscarCarnes() {
+    const data = await carneService.getAllCarnes();
+    setCarnes(data);
+  }
+
+  useEffect(() => {
+    BuscarCarnes();
+  }, []);
+
   return (
     <ScrollView showsHorizontalScrollIndicator={true} style={styles.container}>
       <Sugestoes />
@@ -56,6 +70,13 @@ export default function Home() {
           {Bebidas.map((Bebida) => (
             <CardBebidas
             key={Bebida.id} bebida={Bebida} />
+            ))} 
+        </ScrollView>
+      <Text style={styles.categoria}>Carnes</Text>
+        <ScrollView horizontal={true} style={styles.img_sugestoes}>
+          {Carnes.map((Carne) => (
+            <CardCarnes
+            key={Carne.id} carne={Carne} />
             ))} 
         </ScrollView>
     </ScrollView>
