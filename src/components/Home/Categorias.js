@@ -24,6 +24,7 @@ export default function Categorias() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.titulo}>Categorias</Text>
+        <Text style={styles.subTitulo}>Itens disponíveis separados por categoria</Text>
       </View>
       <ScrollView
         showsHorizontalScrollIndicator={false}
@@ -46,15 +47,19 @@ export default function Categorias() {
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 30,
+    marginVertical: 0,
     marginHorizontal: 0,
   },
   header: {
     marginLeft: 20,
   },
   titulo: {
+    marginTop: 10,
     fontSize: 23,
     fontWeight: 'bold',
+  },
+  subTitulo: {
+    color: '#999',
   },
   lista: {
     marginTop: 10,

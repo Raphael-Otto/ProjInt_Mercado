@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View, Text } from 'react-native';
 import Sugestoes from '../components/Home/Sugestoes';
 import Categorias from '../components/Home/Categorias';
 
@@ -43,14 +43,21 @@ export default function Home() {
             key={Fruta.id} fruta={Fruta} />
             ))} 
         </ScrollView>
-        
+      <Categorias />
+      <Text style={styles.categoria}>Frutas</Text>
+        <ScrollView horizontal={true} style={styles.img_sugestoes}>
+          {Frutas.map((Fruta) => (
+            <CardFrutas
+            key={Fruta.id} fruta={Fruta} />
+            ))} 
+        </ScrollView>
+      <Text style={styles.categoria}>Bebidas</Text>
         <ScrollView horizontal={true} style={styles.img_sugestoes}>
           {Bebidas.map((Bebida) => (
             <CardBebidas
             key={Bebida.id} bebida={Bebida} />
             ))} 
         </ScrollView>
-      <Categorias />
     </ScrollView>
   );
 }
@@ -64,5 +71,13 @@ const styles = StyleSheet.create({
     width: '100%',
     flex: 1,
     flexDirection: "row",
+  },
+  categoria: {
+    fontSize: 23,
+    fontWeight: 'bold',
+
+    marginTop: 20,
+    marginBottom: 10,
+    marginLeft: 20,
   }
 });
