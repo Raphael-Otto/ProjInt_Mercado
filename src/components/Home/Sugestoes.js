@@ -11,6 +11,7 @@ import {
 
 import api from '../../services/api';
 import formatNumber from '../../helpers/formatNumber';
+import TelaVerMais from '../../screens/TelaVerMais';
 
 export default function Ofertas({ navigation }) {
 
@@ -43,7 +44,7 @@ export default function Ofertas({ navigation }) {
         </View>
         <TouchableOpacity>
           <Text 
-          onPress={() => navigation.navigate(' TelaVerMais ')}
+          onPress={() => navigation.navigate("TelaVerMais")}
           style={styles.vejaMais}>Ver mais</Text>
         </TouchableOpacity>
       </View>

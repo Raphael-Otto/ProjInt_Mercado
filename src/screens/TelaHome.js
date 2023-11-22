@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { ScrollView, StyleSheet, View, Text } from 'react-native';
+import { ScrollView, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import Sugestoes from '../components/Home/Sugestoes';
 import Categorias from '../components/Home/Categorias';
 
@@ -52,11 +52,20 @@ export default function Home({ navigation }) {
     <ScrollView showsHorizontalScrollIndicator={true} style={styles.container}>
       <Sugestoes />
         <ScrollView horizontal={true} style={styles.img_sugestoes}>
-          {Frutas.map((Fruta) => (
-            <CardFrutas
-            key={Fruta.id} fruta={Fruta} />
-            ))} 
+          <View>
+            {Frutas.map((Fruta) => (
+              <TouchableOpacity
+                key={Fruta.id}
+                onPress={() =>
+                  navigation.navigate("CardProduto", { fruta: Fruta.id })
+                }
+              >
+                <CardFrutas key={Fruta.id} fruta={Fruta}></CardFrutas>
+              </TouchableOpacity>
+            ))}
+          </View>
         </ScrollView>
+        
       <Categorias />
       <Text style={styles.categoria}>Frutas</Text>
         <ScrollView horizontal={true} style={styles.img_sugestoes}>

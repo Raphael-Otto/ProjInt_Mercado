@@ -4,6 +4,7 @@ import TelaBemVindo from './src/screens/TelaBemVindo';
 import TelaCadastro from './src/screens/TelaCadastro';
 import TelaLogin from './src/screens/TelaLogin';
 import Routes from './src/Routes';
+import CardProduto from './src/components/Cards/CardProduto';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,7 @@ export default function App() {
         <Stack.Screen name="TelaCadastro" component={TelaCadastro} />
         <Stack.Screen name="TelaLogin" component={TelaLogin} />
         <Stack.Screen name="Routes" component={Routes} />
+        <Stack.Screen name="CardProduto" component={CardProduto} />
       </Stack.Navigator>
     </NavigationContainer>
   );
