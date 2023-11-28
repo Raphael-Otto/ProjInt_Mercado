@@ -57,7 +57,7 @@ export default function Home({ navigation }) {
             {Frutas.map((Fruta) => (
               <TouchableOpacity
                 key={Fruta.id}
-                onPress={() => navigation.navigate('TelaCardProduto', { fruta: Fruta.id })}>
+                onPress={() => navigation.navigate('TelaCardProdutoFrutas', { fruta: Fruta.id })}>
                 <CardFrutas key={Fruta.id} fruta={Fruta}></CardFrutas>
               </TouchableOpacity>
             ))}
@@ -72,7 +72,7 @@ export default function Home({ navigation }) {
             {Frutas.map((Fruta) => (
               <TouchableOpacity
                 key={Fruta.id}
-                onPress={() => navigation.navigate('TelaCardProduto', { fruta: Fruta.id })}>
+                onPress={() => navigation.navigate('TelaCardProdutoFrutas', { fruta: Fruta.id })}>
                 <CardFrutas key={Fruta.id} fruta={Fruta}></CardFrutas>
               </TouchableOpacity>
             ))}

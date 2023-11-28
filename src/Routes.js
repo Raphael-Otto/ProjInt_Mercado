@@ -18,14 +18,14 @@ import TelaAjudaApp from './screens/PerfilTelas/PerTelaAjuda';
 import TelaConfiguracoesApp from './screens/PerfilTelas/PerTelaConfiguracoes';
 import TelaSegurancaApp from './screens/PerfilTelas/PerTelaSeguranca';
 
-import TelaSugestoes from './components/Home/Sugestoes';
 import TelaVerMais from './components/Cards/TelaVerMais';
-import TelaCardProduto from './components/Cards/CardProduto';
+import TelaCardProdutoFrutas from './components/Cards/CardProdutoFrutas';
+import TelaCardProdutoCarnes from './components/Cards/CardProdutoCarnes';
+import TelaCardProdutoBebidas from './components/Cards/CardProdutoBebidas';
 
 const BottomTab = createBottomTabNavigator();
 const PerfilStack = createNativeStackNavigator();
 const HomeStack = createNativeStackNavigator();
-const SugestoesStack = createNativeStackNavigator();
 const Tab = createMaterialTopTabNavigator();
 
 function PedidosRouter() {
@@ -53,8 +53,18 @@ function TelaHomeRoutesApp() {
         options={{ headerTitle: 'Outras opções'}}
       />
       <HomeStack.Screen
-        name="TelaCardProduto"
-        component={TelaCardProduto}
+        name="TelaCardProdutoFrutas"
+        component={TelaCardProdutoFrutas}
+        options={{ headerTitle: 'Produtos'}}
+      />
+      <HomeStack.Screen
+        name="TelaCardProdutoCarnes"
+        component={TelaCardProdutoCarnes}
+        options={{ headerTitle: 'Produtos'}}
+      />
+      <HomeStack.Screen
+        name="TelaCardProdutoBebidas"
+        component={TelaCardProdutoBebidas}
         options={{ headerTitle: 'Produtos'}}
       />
     </HomeStack.Navigator>
