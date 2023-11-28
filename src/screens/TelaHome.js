@@ -85,7 +85,7 @@ export default function Home({ navigation }) {
             {Bebidas.map((Bebida) => (
               <TouchableOpacity
                 key={Bebida.id}
-                onPress={() => navigation.navigate('TelaCardProduto', { bebida: Bebida.id })}>
+                onPress={() => navigation.navigate('TelaCardProdutoBebidas', { bebida: Bebida.id })}>
                 <CardBebidas key={Bebida.id} bebida={Bebida}></CardBebidas>
               </TouchableOpacity>
             ))}
@@ -93,11 +93,16 @@ export default function Home({ navigation }) {
         </ScrollView>
 
       <Text style={styles.categoria}>Carnes</Text>
-        <ScrollView horizontal={true} style={styles.img_sugestoes}>
-          {Carnes.map((Carne) => (
-            <CardCarnes
-            key={Carne.id} carne={Carne} />
-            ))} 
+      <ScrollView horizontal={true} style={styles.img_sugestoes}>
+          <View style={{ flexDirection: 'row' }}>
+            {Carnes.map((Carne) => (
+              <TouchableOpacity
+                key={Carne.id}
+                onPress={() => navigation.navigate('TelaCardProdutoCarnes', { carne: Carne.id })}>
+                <CardCarnes key={Carne.id} carne={Carne}></CardCarnes>
+              </TouchableOpacity>
+            ))}
+          </View>
         </ScrollView>
 
     </ScrollView>
