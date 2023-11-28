@@ -18,8 +18,14 @@ import TelaAjudaApp from './screens/PerfilTelas/PerTelaAjuda';
 import TelaConfiguracoesApp from './screens/PerfilTelas/PerTelaConfiguracoes';
 import TelaSegurancaApp from './screens/PerfilTelas/PerTelaSeguranca';
 
+import TelaSugestoes from './components/Home/Sugestoes';
+import TelaVerMais from './components/Cards/TelaVerMais';
+import TelaCardProduto from './components/Cards/CardProduto';
+
 const BottomTab = createBottomTabNavigator();
 const PerfilStack = createNativeStackNavigator();
+const HomeStack = createNativeStackNavigator();
+const SugestoesStack = createNativeStackNavigator();
 const Tab = createMaterialTopTabNavigator();
 
 function PedidosRouter() {
@@ -35,10 +41,43 @@ function PedidosRouter() {
   );
 }
 
+function TelaHomeRoutesApp() {
+  return (
+    <HomeStack.Navigator screenOptions={{
+      headerShown: false
+    }}>
+      <HomeStack.Screen name="Home" component={TelaHomeApp} />
+      <HomeStack.Screen
+        name="TelaVerMais"
+        component={TelaVerMais}
+        options={{ headerTitle: 'Outras opções'}}
+      />
+      <HomeStack.Screen
+        name="TelaCardProduto"
+        component={TelaCardProduto}
+        options={{ headerTitle: 'Produtos'}}
+      />
+    </HomeStack.Navigator>
+  );
+}
+
 function TelaPerfilRoutesApp() {
   return (
     <PerfilStack.Navigator>
-      <PerfilStack.Screen name="Perfil" component={TelaPerfilApp} />
+      <PerfilStack.Screen 
+        name="Perfil" 
+        component={TelaPerfilApp} 
+        options={{
+          headerStyle: {
+            backgroundColor: '#FFF',
+            
+          },
+          headerTintColor: '#000',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
       <PerfilStack.Screen
         name="TelaNotificacoesApp"
         component={TelaNotificacoesApp}
@@ -94,7 +133,7 @@ export default function Routes() {
         }}>
         <BottomTab.Screen
           name="Mercado Arco-Íris"
-          component={TelaHomeApp}
+          component={TelaHomeRoutesApp}
           options={{
             tabBarLabel: 'Início',
             tabBarIcon: ({ color }) => (
@@ -118,6 +157,14 @@ export default function Routes() {
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="search" color={color} size={26} />
             ),
+            headerStyle: {
+              backgroundColor: '#FFF',
+              
+            },
+            headerTintColor: '#000',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
           }}
         />
          <BottomTab.Screen
@@ -128,6 +175,14 @@ export default function Routes() {
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="assignment" color={color} size={26} />
             ),
+            headerStyle: {
+              backgroundColor: '#FFF',
+              
+            },
+            headerTintColor: '#000',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
           }}
         />
         <BottomTab.Screen

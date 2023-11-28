@@ -1,40 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { MaterialIcons } from '@expo/vector-icons';
-import {
-  Image,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-  StyleSheet,
-} from 'react-native';
+import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 
-import api from '../../services/api';
-import formatNumber from '../../helpers/formatNumber';
-import TelaVerMais from '../../screens/TelaVerMais';
-
-export default function Ofertas({ navigation }) {
-
-  const [ofertas, setOfertas] = useState([]);
-  useEffect(() => {
-    async function carregarOfertas() {
-      const response = await api.get('offers');
-      const data = response.data.map((offer) => ({
-        id: offer.id,
-        offer_url: offer.offer_url,
-        title: offer.title,
-        newPrice: formatNumber(offer.newPrice),
-        price: formatNumber(offer.price),
-        ingredients: offer.ingredients,
-        delivery: offer.delivery,
-        delay: offer.delay,
-        icon: offer.icon,
-      }));
-      setOfertas(data);
-    }
-    carregarOfertas();
-  }, []);
-
+export default function Sugestoes({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -44,31 +10,10 @@ export default function Ofertas({ navigation }) {
         </View>
         <TouchableOpacity>
           <Text 
-          onPress={() => navigation.navigate("TelaVerMais")}
+          onPress={() => navigation.navigate('TelaVerMais')}
           style={styles.vejaMais}>Ver mais</Text>
         </TouchableOpacity>
       </View>
-      <ScrollView
-        showsHorizontalScrollIndicator={false}
-        horizontal
-        style={styles.lista}
-      >
-        {ofertas.map((oferta) => {
-          <TouchableOpacity style={styles.item} key={oferta.id}>
-            <Image source={{ uri: oferta.offer_url }} style={styles.imagem} />
-            <View style={styles.info}>
-              <Text numberOfLines={2} style={styles.titulo}>
-                {oferta.title}
-              </Text>
-              <View style={styles.itemPreco}>
-                <Text style={styles.preco}>{oferta.newPrice}</Text>
-                <Text style={styles.precoAntigo}>{oferta.price}</Text>
-                <MaterialIcons name="local-offer" size={15} color="#000" />
-              </View>
-            </View>
-          </TouchableOpacity>
-        })}
-      </ScrollView>
     </View>
   );
 }

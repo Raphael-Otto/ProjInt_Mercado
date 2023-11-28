@@ -50,16 +50,14 @@ export default function Home({ navigation }) {
 
   return (
     <ScrollView showsHorizontalScrollIndicator={true} style={styles.container}>
+
       <Sugestoes />
         <ScrollView horizontal={true} style={styles.img_sugestoes}>
-          <View>
+          <View style={{ flexDirection: 'row' }}>
             {Frutas.map((Fruta) => (
               <TouchableOpacity
                 key={Fruta.id}
-                onPress={() =>
-                  navigation.navigate("CardProduto", { fruta: Fruta.id })
-                }
-              >
+                onPress={() => navigation.navigate('TelaCardProduto', { fruta: Fruta.id })}>
                 <CardFrutas key={Fruta.id} fruta={Fruta}></CardFrutas>
               </TouchableOpacity>
             ))}
@@ -67,20 +65,33 @@ export default function Home({ navigation }) {
         </ScrollView>
         
       <Categorias />
+
       <Text style={styles.categoria}>Frutas</Text>
         <ScrollView horizontal={true} style={styles.img_sugestoes}>
-          {Frutas.map((Fruta) => (
-            <CardFrutas
-            key={Fruta.id} fruta={Fruta} />
-            ))} 
+          <View style={{ flexDirection: 'row' }}>
+            {Frutas.map((Fruta) => (
+              <TouchableOpacity
+                key={Fruta.id}
+                onPress={() => navigation.navigate('TelaCardProduto', { fruta: Fruta.id })}>
+                <CardFrutas key={Fruta.id} fruta={Fruta}></CardFrutas>
+              </TouchableOpacity>
+            ))}
+          </View>
         </ScrollView>
+
       <Text style={styles.categoria}>Bebidas</Text>
         <ScrollView horizontal={true} style={styles.img_sugestoes}>
-          {Bebidas.map((Bebida) => (
-            <CardBebidas
-            key={Bebida.id} bebida={Bebida} />
-            ))} 
+          <View style={{ flexDirection: 'row' }}>
+            {Bebidas.map((Bebida) => (
+              <TouchableOpacity
+                key={Bebida.id}
+                onPress={() => navigation.navigate('TelaCardProduto', { bebida: Bebida.id })}>
+                <CardBebidas key={Bebida.id} bebida={Bebida}></CardBebidas>
+              </TouchableOpacity>
+            ))}
+          </View>
         </ScrollView>
+
       <Text style={styles.categoria}>Carnes</Text>
         <ScrollView horizontal={true} style={styles.img_sugestoes}>
           {Carnes.map((Carne) => (
@@ -88,6 +99,7 @@ export default function Home({ navigation }) {
             key={Carne.id} carne={Carne} />
             ))} 
         </ScrollView>
+
     </ScrollView>
   );
 }
