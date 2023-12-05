@@ -25,7 +25,7 @@ const CardProduto = ({ route }) => {
 
           <View style={styles.info}>
             <Text style={styles.TextDetail}>{fruta.nome}</Text>
-            <Text style={styles.PrecoDetail}>R${fruta.preco}</Text>
+            <Text style={styles.PrecoDetail}>R${fruta.preco},00</Text>
           </View>
 
           <View style={styles.align}>

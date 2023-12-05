@@ -7,7 +7,7 @@ function CardFrutas(props) {
       <View style={{ height: "100%", width: "100%" }}>
         <Image style={styles.frutas} source={{ uri: props.fruta.capa.url }} />
         <Text style={styles.nomes}> {props.fruta.nome} </Text>
-        <Text style={styles.precos}> {props.fruta.preco}</Text>
+        <Text style={styles.precos}> R${props.fruta.preco},00</Text>
       </View>
     </View> 
   );
