@@ -28,6 +28,10 @@ const CardProduto = ({ route }) => {
             <Text style={styles.PrecoDetail}>R${fruta.preco},00</Text>
           </View>
 
+          <View>
+            <Text>{fruta.descricao}</Text>
+          </View>
+
           <View style={styles.align}>
             <TouchableOpacity style={styles.compras}>
               <Text style={styles.comprar}>Comprar</Text>
