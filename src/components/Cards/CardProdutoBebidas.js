@@ -29,6 +29,10 @@ const CardProduto = ({ route }) => {
             <Text style={styles.PrecoDetail}>R${bebida.preco},00</Text>
           </View>
 
+          <View>
+            <Text style={styles.Desc}>{bebida.descricao}</Text>
+          </View>
+
           <View style={styles.align}>
             <TouchableOpacity style={styles.compras}>
               <Text style={styles.comprar}>Comprar</Text>
@@ -72,6 +76,12 @@ const styles = StyleSheet.create({
     shadowRadius: 1.00,
 
     elevation: 1,
+  },
+  Desc: {
+    marginTop: 10,
+    paddingLeft: 20,
+    color: 'gray',
+    fontSize: 18,
   },
   Image: {
     height: "100%",

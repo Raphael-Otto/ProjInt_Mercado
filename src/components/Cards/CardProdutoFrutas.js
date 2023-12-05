@@ -29,7 +29,7 @@ const CardProduto = ({ route }) => {
           </View>
 
           <View>
-            <Text>{fruta.descricao}</Text>
+            <Text style={styles.Desc}>{fruta.descricao}</Text>
           </View>
 
           <View style={styles.align}>
@@ -80,6 +80,12 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "80%",
     backgroundColor: 'white',
+  },
+  Desc: {
+    marginTop: 10,
+    paddingLeft: 20,
+    color: 'gray',
+    fontSize: 18,
   },
   TextDetail: {
     paddingLeft: 20,
