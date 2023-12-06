@@ -1,8 +1,13 @@
-import * as React from 'react';
-import { Text, TextInput, View, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
+import React, { useState } from "react";
+import { Text, TextInput, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 
-export default function TelaLogin({ navigation }) {
-  
+export default function Login() {
+  const navigation = useNavigation();
+  const [isLoginVisible, setLoginVisible] = useState(false);
+  const toggleLogin = () => {
+    setLoginVisible(!isLoginVisible);
+  };
   return (
     <ImageBackground
       source={require('../imgs/FundoSimples.png')}
